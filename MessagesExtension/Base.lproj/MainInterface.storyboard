@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.024374910130290472" green="1" blue="0.14735284947829563" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20.5" y="41.5"/>
+        </scene>
+        <!--Steps Overview View Controller-->
+        <scene sceneID="2e2-yF-Vhy">
+            <objects>
+                <viewController storyboardIdentifier="StepsOverviewViewController" id="1ue-Cn-ngf" customClass="StepsOverviewViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vuT-6P-zYy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z8K-PN-2mF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="szJ-JL-6kN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoU-xM-b2n">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ML-oz-Lon">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="BNG-Ae-H2U"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXU-AF-7Wr">
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Share">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareButton" destination="1ue-Cn-ngf" eventType="touchUpInside" id="aic-bG-TwQ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oW9-Ft-MCs">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="5OX-ky-TaU"/>
+                                            <constraint firstAttribute="width" constant="190" id="jM8-3r-8MM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="33"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="2ML-oz-Lon" firstAttribute="width" secondItem="oW9-Ft-MCs" secondAttribute="width" id="2Th-o7-lMP"/>
+                                    <constraint firstItem="2ML-oz-Lon" firstAttribute="top" secondItem="oW9-Ft-MCs" secondAttribute="bottom" id="5yz-pK-WES"/>
+                                    <constraint firstItem="2ML-oz-Lon" firstAttribute="leading" secondItem="oW9-Ft-MCs" secondAttribute="leading" id="9Rb-mf-IJV"/>
+                                    <constraint firstAttribute="trailing" secondItem="pXU-AF-7Wr" secondAttribute="trailing" constant="42" id="H0y-yy-Tme"/>
+                                    <constraint firstAttribute="height" constant="128" id="RpL-9J-Ngc"/>
+                                    <constraint firstItem="oW9-Ft-MCs" firstAttribute="leading" secondItem="WoU-xM-b2n" secondAttribute="leading" constant="17" id="UPd-lD-z5x"/>
+                                    <constraint firstItem="pXU-AF-7Wr" firstAttribute="centerY" secondItem="WoU-xM-b2n" secondAttribute="centerY" id="cT8-3h-ieJ"/>
+                                    <constraint firstItem="oW9-Ft-MCs" firstAttribute="baseline" secondItem="WoU-xM-b2n" secondAttribute="centerY" id="hLt-SP-sOS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.28678421868008697" blue="0.25051700849087666" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="WoU-xM-b2n" firstAttribute="centerY" secondItem="szJ-JL-6kN" secondAttribute="centerY" id="2Bo-qj-Lnp"/>
+                            <constraint firstAttribute="trailing" secondItem="WoU-xM-b2n" secondAttribute="trailing" id="M0j-sI-zHd"/>
+                            <constraint firstItem="WoU-xM-b2n" firstAttribute="leading" secondItem="szJ-JL-6kN" secondAttribute="leading" id="Uzk-C6-h87"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="totalStepsTodayLabel" destination="2ML-oz-Lon" id="4yG-42-BB4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iEl-ub-pAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597.5" y="53.5"/>
+        </scene>
+        <!--Compare Steps View Controller-->
+        <scene sceneID="Lzm-oQ-232">
+            <objects>
+                <viewController storyboardIdentifier="CompareStepsViewController" id="tIS-ub-l7q" customClass="CompareStepsViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dgy-95-dzB"/>
+                        <viewControllerLayoutGuide type="bottom" id="X4Z-4G-PJz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M7b-uZ-9JZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How did you compare?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nqz-Qg-6Xm">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="38"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.079808023752387491" green="0.43830277817926611" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Nqz-Qg-6Xm" secondAttribute="trailing" constant="13" id="E58-37-fdW"/>
+                            <constraint firstItem="Nqz-Qg-6Xm" firstAttribute="top" secondItem="Dgy-95-dzB" secondAttribute="bottom" constant="8" symbolic="YES" id="g0f-xe-Wbc"/>
+                            <constraint firstItem="Nqz-Qg-6Xm" firstAttribute="leading" secondItem="M7b-uZ-9JZ" secondAttribute="leading" constant="13" id="xRz-c8-uwu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5JO-HL-zpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172.5" y="56.694999999999993"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina5_5.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

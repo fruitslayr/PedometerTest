@@ -11,8 +11,10 @@ import Messages
 import CoreMotion
 
 
-class MessagesViewController: MSMessagesAppViewController {
+class MessagesViewController: MSMessagesAppViewController, shareData {
     
+    var currentDisplayedController: UIViewControllerWithPedoHandler?
+    var pedometerHandler: PedometerHandler?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +32,13 @@ class MessagesViewController: MSMessagesAppViewController {
     override func willBecomeActive(with conversation: MSConversation) {
         // Called when the extension is about to move from the inactive to active state.
         // This will happen when the extension is about to present UI.
+        super.willBecomeActive(with: conversation)
+
+        if pedometerHandler == nil {
+            pedometerHandler = PedometerHandler()
+        }
         
         // Use this method to configure the extension and restore previously stored state.
-        super.willBecomeActive(with: conversation)
-        print(presentationStyle)
         presentViewController(for: conversation, with: presentationStyle)
     }
     
@@ -84,15 +89,12 @@ class MessagesViewController: MSMessagesAppViewController {
     
     private func presentViewController(for conversation: MSConversation, with presentationStyle: MSMessagesAppPresentationStyle) {
         // Determine the controller to present.
-
-        print("presentViewController")
         
-        let controller: UIViewController
         if presentationStyle == .compact {
             // Show a list of previously created ice creams.
-            controller = instantiateStepsOverviewViewController()
+            currentDisplayedController = instantiateStepsOverviewViewController()
         } else {
-            controller = instantiateCompareStepsViewController()
+            currentDisplayedController = instantiateCompareStepsViewController()
         }
         
         // Remove any existing child controllers.
@@ -103,36 +105,54 @@ class MessagesViewController: MSMessagesAppViewController {
         }
         
         // Embed the new controller.
-        addChildViewController(controller)
+        addChildViewController(currentDisplayedController!)
         
-//        controller.view.frame = view.bounds
-        controller.view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(controller.view)
+        currentDisplayedController!.view.frame = view.bounds
+        currentDisplayedController!.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(currentDisplayedController!.view)
 
-//        controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-//        controller.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-//        controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        
-        controller.didMove(toParentViewController: self)
+        currentDisplayedController!.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        currentDisplayedController!.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        currentDisplayedController!.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        currentDisplayedController!.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
+        currentDisplayedController!.didMove(toParentViewController: self)
+        
+        currentDisplayedController!.updateSteps()
     }
     
-    private func instantiateStepsOverviewViewController() -> UIViewController {
-        
-        print("stepOveview")
+    func shareMessage() {
+        //Share message!!
+    }
+    
+    private func instantiateStepsOverviewViewController() -> StepsOverviewViewController {
         
         guard let controller = storyboard?.instantiateViewController(withIdentifier: StepsOverviewViewController.storyboardIdentifier) as? StepsOverviewViewController else { fatalError("Unable to instantiate an StepsOverviewViewController from the storyboard") }
         
+        controller.pedometerHandler = pedometerHandler
+        pedometerHandler?.parent = controller
+        controller.parentController = self
+        
         return controller
     }
     
-    private func instantiateCompareStepsViewController() -> UIViewController {
-        print("CompareSTeps")
+    private func instantiateCompareStepsViewController() -> CompareStepsViewController {
 
         guard let controller = storyboard?.instantiateViewController(withIdentifier: CompareStepsViewController.storyboardIdentifier) as? CompareStepsViewController else { fatalError("Unable to instantiate a CompareStepsViewController from the storyboard") }
+        
+        controller.pedometerHandler = pedometerHandler
+        pedometerHandler?.parent = controller
+        controller.parentController = self
+        
+        //must call updateSteps()
+        
+        
         
         return controller
     }
 
+}
+
+protocol shareData {
+    func shareMessage()
 }

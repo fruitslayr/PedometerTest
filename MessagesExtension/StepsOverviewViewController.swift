@@ -10,31 +10,26 @@ import UIKit
 import CoreMotion
 
 
-class StepsOverviewViewController: UIViewController {
-
-    let pedometer = CMPedometer()
+class StepsOverviewViewController: UIViewControllerWithPedoHandler, updateStepsDelegate {
     
     static let storyboardIdentifier = "StepsOverviewViewController"
 
-    @IBOutlet var totalStepsTodayLabel: UILabel!
+    @IBOutlet var stepsTodayLabel: UILabel!
+    @IBOutlet var stepsThisWeekLabel: UILabel!
     
     @IBAction func shareButton(){
-        print("shareButton pressed")
-        totalStepsTodayLabel.text = "pressed"
+        if canShare {
+            parentController?.shareMessage()
+        } else {
+            print("can't share")
+        }
         
     }
     
-    // MARK: Initialization
-    required init? (coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        print("initializing")
-    }
+    var canShare: Bool = false
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(animated)
-        
-        updateSteps()
+        super.viewWillAppear(animated)        
     }
     
     override func viewDidLoad() {
@@ -48,39 +43,28 @@ class StepsOverviewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func updateSteps() {
+        pedometerHandler!.getMyStepsToday()
+        pedometerHandler!.getMyStepsThisWeek()
+    }
     
-    func updateSteps(){        
-        if CMPedometer.isStepCountingAvailable() {
-            
-            let userCalendar = Calendar.current()
-            
-            var components : DateComponents = userCalendar.components([.day, .month, .year], from: Date())
-            
-            components.hour = 0
-            components.minute = 0
-            components.second = 0
-            
-            let midnight = userCalendar.date(from: components)
-            
-            DispatchQueue.global(attributes: .qosUserInitiated).async {
-                
-                var totalSteps = ""
-                
-                self.pedometer.queryPedometerData(from: midnight!, to: Date(), withHandler: {data, error in
-                    
-                    if(error == nil){
-                        totalSteps = "\(data?.numberOfSteps)"
-                    }
-                })
-
-                // Bounce back to the main thread to update the UI
-                DispatchQueue.main.async {
-                    self.totalStepsTodayLabel.text = totalSteps
-                }
-            }
-            
+    func updateStepsToday(steps: Int, error: NSError?) {
+        if error == nil {
+            canShare = true
+            stepsTodayLabel.text = "/(steps)"
         } else {
-            self.totalStepsTodayLabel.text = "Unavailable"
+            canShare = false
+            stepsTodayLabel.text = "Unavailable"
+        }
+    }
+    
+    func updateStepsThisWeek(steps: Int, error: NSError?) {
+        if error == nil {
+            canShare = true
+            stepsThisWeekLabel.text = "/(steps)"
+        } else {
+            canShare = false
+            stepsThisWeekLabel.text = "Unavailable"
         }
     }
 

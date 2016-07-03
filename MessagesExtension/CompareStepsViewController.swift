@@ -10,11 +10,10 @@ import UIKit
 import CoreMotion
 
 
-class CompareStepsViewController: UIViewController {
+class CompareStepsViewController: UIViewControllerWithPedoHandler, graphDataArrayDelegate {
 
     
     static let storyboardIdentifier = "CompareStepsViewController"
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +26,9 @@ class CompareStepsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func updateGraphDataArray(myPedometerData: PedometerData, friendPedometerData: PedometerData, error: NSError?) {
+        //update data
     }
-    */
+    
 
 }

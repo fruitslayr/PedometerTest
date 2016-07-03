@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E030B501D24E0100093A167 /* UIViewControllerWithPedoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E030B4F1D24E0100093A167 /* UIViewControllerWithPedoHandler.swift */; };
 		6E27F8A61D14D452004AF7C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E27F8A51D14D452004AF7C8 /* Assets.xcassets */; };
 		6E27F8AD1D14D452004AF7C8 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6E27F8AC1D14D452004AF7C8 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6E27F8B21D14D452004AF7C8 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E27F8B11D14D452004AF7C8 /* Messages.framework */; };
@@ -14,10 +15,12 @@
 		6E27F8B81D14D452004AF7C8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E27F8B61D14D452004AF7C8 /* MainInterface.storyboard */; };
 		6E27F8BA1D14D452004AF7C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E27F8B91D14D452004AF7C8 /* Assets.xcassets */; };
 		6E27F8C61D14DE9E004AF7C8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E27F8C51D14DE9E004AF7C8 /* CoreMotion.framework */; };
+		6E3449401D1EA37D0048C7D3 /* PedometerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E34493F1D1EA37D0048C7D3 /* PedometerHandler.swift */; };
+		6E3449421D1EA46C0048C7D3 /* PedometerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3449411D1EA46C0048C7D3 /* PedometerData.swift */; };
 		6E56C14F1D14F48100E22576 /* StepsOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E56C14E1D14F48100E22576 /* StepsOverviewViewController.swift */; };
 		6E56C1511D14F49000E22576 /* CompareStepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E56C1501D14F49000E22576 /* CompareStepsViewController.swift */; };
-		6E56C1601D1509C200E22576 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E56C15E1D1509C200E22576 /* LineChart.swift */; };
-		6E56C1611D1509C200E22576 /* LineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E56C15F1D1509C200E22576 /* LineViewController.swift */; };
+		6EC28A191D273FD50046D4EF /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC28A171D273FD50046D4EF /* LineChart.swift */; };
+		6EC28A1A1D273FD50046D4EF /* LineChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC28A181D273FD50046D4EF /* LineChartController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6E030B4F1D24E0100093A167 /* UIViewControllerWithPedoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerWithPedoHandler.swift; sourceTree = "<group>"; };
 		6E27F8A21D14D452004AF7C8 /* PedometerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PedometerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E27F8A51D14D452004AF7C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E27F8A71D14D452004AF7C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,10 +59,12 @@
 		6E27F8B91D14D452004AF7C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E27F8BB1D14D452004AF7C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E27F8C51D14DE9E004AF7C8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		6E34493F1D1EA37D0048C7D3 /* PedometerHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedometerHandler.swift; sourceTree = "<group>"; };
+		6E3449411D1EA46C0048C7D3 /* PedometerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedometerData.swift; sourceTree = "<group>"; };
 		6E56C14E1D14F48100E22576 /* StepsOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsOverviewViewController.swift; sourceTree = "<group>"; };
 		6E56C1501D14F49000E22576 /* CompareStepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompareStepsViewController.swift; sourceTree = "<group>"; };
-		6E56C15E1D1509C200E22576 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
-		6E56C15F1D1509C200E22576 /* LineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineViewController.swift; sourceTree = "<group>"; };
+		6EC28A171D273FD50046D4EF /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		6EC28A181D273FD50046D4EF /* LineChartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E1C15051D27401F00A4765B /* Line graph */ = {
+			isa = PBXGroup;
+			children = (
+				6EC28A181D273FD50046D4EF /* LineChartController.swift */,
+				6EC28A171D273FD50046D4EF /* LineChart.swift */,
+			);
+			name = "Line graph";
+			sourceTree = "<group>";
+		};
 		6E27F89B1D14D452004AF7C8 = {
 			isa = PBXGroup;
 			children = (
@@ -114,11 +129,13 @@
 		6E27F8B31D14D452004AF7C8 /* MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				6E34493F1D1EA37D0048C7D3 /* PedometerHandler.swift */,
+				6E3449411D1EA46C0048C7D3 /* PedometerData.swift */,
 				6E27F8B41D14D452004AF7C8 /* MessagesViewController.swift */,
+				6E030B4F1D24E0100093A167 /* UIViewControllerWithPedoHandler.swift */,
 				6E56C14E1D14F48100E22576 /* StepsOverviewViewController.swift */,
 				6E56C1501D14F49000E22576 /* CompareStepsViewController.swift */,
-				6E56C15F1D1509C200E22576 /* LineViewController.swift */,
-				6E56C15E1D1509C200E22576 /* LineChart.swift */,
+				6E1C15051D27401F00A4765B /* Line graph */,
 				6E27F8B61D14D452004AF7C8 /* MainInterface.storyboard */,
 				6E27F8B91D14D452004AF7C8 /* Assets.xcassets */,
 				6E27F8BB1D14D452004AF7C8 /* Info.plist */,
@@ -227,11 +244,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E56C1601D1509C200E22576 /* LineChart.swift in Sources */,
 				6E56C1511D14F49000E22576 /* CompareStepsViewController.swift in Sources */,
 				6E27F8B51D14D452004AF7C8 /* MessagesViewController.swift in Sources */,
 				6E56C14F1D14F48100E22576 /* StepsOverviewViewController.swift in Sources */,
-				6E56C1611D1509C200E22576 /* LineViewController.swift in Sources */,
+				6E3449401D1EA37D0048C7D3 /* PedometerHandler.swift in Sources */,
+				6EC28A191D273FD50046D4EF /* LineChart.swift in Sources */,
+				6E3449421D1EA46C0048C7D3 /* PedometerData.swift in Sources */,
+				6E030B501D24E0100093A167 /* UIViewControllerWithPedoHandler.swift in Sources */,
+				6EC28A1A1D273FD50046D4EF /* LineChartController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
